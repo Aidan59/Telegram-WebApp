@@ -1,9 +1,14 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306
+    url: jdbc:mysql://localhost:3306/telegram-webapp?useSSL=false&serverTimezone=UTC
     username: root
     password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
   liquibase:
     enabled: true
-  application:
-    name: telegram_webapp
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    user: root
+    password: root
+    default-schema: telegram-webapp
+
+
